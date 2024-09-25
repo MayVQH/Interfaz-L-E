@@ -2115,8 +2115,10 @@ class VentanaDeActualizacion(tk.Toplevel):
         with pd.ExcelWriter(url,engine='openpyxl', mode='a', if_sheet_exists = 'replace') as writer:
             if self.tipoCliente == 'publico':
                 self.dfs.to_excel(writer,sheet_name='TablaGeneral', index=False)
+                tk.messagebox.showinfo(title=None, message='Información modificada con éxito')
             else:
                 self.dfs2.to_excel(writer,sheet_name='TablaGeneral', index=False)
+                tk.messagebox.showinfo(title=None, message='Información modificada con éxito')
     
     def volverVentanaPrincipal(self):
         self.destroy()
